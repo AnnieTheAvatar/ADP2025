@@ -31,6 +31,7 @@ export default async function HomePage() {
           />
         </picture>
         <h1>Welcome to the ADP Grad Show</h1>
+        <DegreeList />
         <div className="links">
           <a
             className="admin"
@@ -49,15 +50,13 @@ export default async function HomePage() {
             Payload Documentation
           </a>
         </div>
-        <h1><a href="https://adpgradshow.com">2024 Grad Show</a></h1>
+        <h2><a href="https://adpgradshow.com">2024 Grad Show</a></h2>
         <div className="links">
           <h2><a href="https://2020.adpgradshow.com">2020</a></h2>
           <h2><a href="https://2021.adpgradshow.com">2021</a></h2>
           <h2><a href="https://2022.adpgradshow.com">2022</a></h2>
           <h2><a href="https://2023.adpgradshow.com">2023</a></h2>
         </div>
-        <DegreeList />
-        <ProjectsList />
       </div>
       <div className="footer">
         <p><a href='https://issuu.com/sydneyschool/docs/241124_catalogue_digital?fr=sYTNkYjYzODc5Njg'>View the 2024 catalogue here</a></p>
