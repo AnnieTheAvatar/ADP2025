@@ -1,0 +1,43 @@
+{
+  "api": {
+    "adpgrad2025": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "adp2025testgradf8aa0f07"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "adp2025testgradf8aa0f07": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_adp2025testgradf8aa0f07_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "adp2025testgradf8aa0f07"
+        }
+      ]
+    },
+    "AMPLIFY_function_adp2025testgradf8aa0f07_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "adp2025testgradf8aa0f07"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/items": {
+      "name": "/items",
+      "lambdaFunction": "adp2025testgradf8aa0f07",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}
