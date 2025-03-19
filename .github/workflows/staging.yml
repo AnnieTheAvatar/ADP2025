@@ -24,6 +24,14 @@ jobs:
         with:
           node-version: "23.3.0"
 
+      # Set PAYLOAD_SECRET as environment variable for the build process
+      - name: Set PAYLOAD_SECRET
+        run: echo "PAYLOAD_SECRET=${{ secrets.PAYLOAD_SECRET }}" >> $GITHUB_ENV
+
+      # Set MONGODB_URI as environment variable for the build process
+      - name: Set DATABASE_URI
+        run: echo "MONGODB_URI=${{ secrets.MONGODB_URI }}" >> $GITHUB_ENV
+
       #Setup AWS credentials
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
