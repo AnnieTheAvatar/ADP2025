@@ -227,6 +227,7 @@ export interface Media {
 export interface Student {
   id: string;
   unikey: string;
+  slug: string;
   firstName: string;
   lastName: string;
   shortBio: string;
@@ -243,13 +244,27 @@ export interface Student {
  */
 export interface Degree {
   id: string;
-  title?: string | null;
+  title: string;
   slug: string;
-  degreeType?: ("Bachelor's" | "Master's") | null;
+  degreeType: "Bachelor's" | "Master's";
   faculty?: (string | null) | Faculty;
   description?: string | null;
   coordinators?: string[] | null;
   image?: (string | null) | Media;
+  meta?: {
+    /**
+     * A title for SEO and social media.
+     */
+    title?: string | null;
+    /**
+     * A short description for SEO and social media.
+     */
+    description?: string | null;
+    /**
+     * An image used for Open Graph previews.
+     */
+    image?: (string | null) | Media;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -289,13 +304,31 @@ export interface Brief {
  */
 export interface Studio {
   id: string;
-  title?: string | null;
+  title: string;
+  slug: string;
   studioN?: number | null;
   description?: string | null;
   coordinator?: string[] | null;
   tutors?: string[] | null;
   degree?: (string | null) | Degree;
   image?: (string | null) | Media;
+  /**
+   * Settings for search engine & social media - This is auto-populated from the fields above.
+   */
+  meta?: {
+    /**
+     * Title used for SEO and social sharing.
+     */
+    title?: string | null;
+    /**
+     * A short description for SEO and social media.
+     */
+    description?: string | null;
+    /**
+     * An image used for Open Graph previews.
+     */
+    image?: (string | null) | Media;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -319,6 +352,20 @@ export interface Project {
         id?: string | null;
       }[]
     | null;
+  meta?: {
+    /**
+     * Title used for SEO and social sharing.
+     */
+    title?: string | null;
+    /**
+     * A short description for SEO and social media.
+     */
+    description?: string | null;
+    /**
+     * An image used for Open Graph previews.
+     */
+    image?: (string | null) | Media;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -533,6 +580,7 @@ export interface MediaSelect<T extends boolean = true> {
  */
 export interface StudentsSelect<T extends boolean = true> {
   unikey?: T;
+  slug?: T;
   firstName?: T;
   lastName?: T;
   shortBio?: T;
@@ -555,6 +603,13 @@ export interface DegreesSelect<T extends boolean = true> {
   description?: T;
   coordinators?: T;
   image?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }
@@ -592,6 +647,13 @@ export interface ProjectsSelect<T extends boolean = true> {
         caption?: T;
         id?: T;
       };
+  meta?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }
@@ -626,12 +688,20 @@ export interface FacultySelect<T extends boolean = true> {
  */
 export interface StudioSelect<T extends boolean = true> {
   title?: T;
+  slug?: T;
   studioN?: T;
   description?: T;
   coordinator?: T;
   tutors?: T;
   degree?: T;
   image?: T;
+  meta?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }

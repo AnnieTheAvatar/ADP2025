@@ -1,23 +1,18 @@
 // /app/layout.tsx
 import { getPayload } from 'payload';
-import { Degree } from '@/payload-types';  // Assuming this type is defined for your Payload collection
+import { Degree } from '@/payload-types';  // Ensure this type is correct
 import configPromise from '@payload-config'; // Path to your Payload config
-import './styles.css'
+import './styles.css';
 import Header from '@/components/Header';
-
-interface LayoutProps {
-  children: React.ReactNode;
-  degrees: Degree[];  // Fetched degrees data
-}
 
 export const metadata = {
   description: 'Architecture, Design, and Planning 2025 Graduate Show Website',
   title: 'ADP 2025 Grad Show',
-}
+};
 
-// Layout component where data is fetched and passed as props to child pages
-const Layout = async ({ children }: LayoutProps) => {
-  // Fetch degrees data server-side
+// Layout component where data is fetched
+const Layout = async ({ children }: { children: React.ReactNode }) => {
+  // Fetch degrees inside the component (Next.js supports async components)
   const payload = await getPayload({ config: configPromise });
   const result = await payload.find({
     collection: 'degrees',
@@ -25,16 +20,16 @@ const Layout = async ({ children }: LayoutProps) => {
     pagination: false,
   });
 
-  const degrees = result.docs || [];
+  const degrees: Degree[] = result.docs || [];
 
   return (
     <html lang="en">
       <body>
         <div>
-        <Header degrees={degrees} /> {/* Use the Header component */}
-      <main>{children}</main>
-    </div>
-    </body>
+          <Header degrees={degrees} /> {/* Pass degrees directly here */}
+          <main>{children}</main>
+        </div>
+      </body>
     </html>
   );
 };

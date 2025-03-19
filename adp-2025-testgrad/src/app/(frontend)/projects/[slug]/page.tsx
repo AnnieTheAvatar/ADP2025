@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 
-import { PayloadRedirects } from '@/components/PayloadRedirects'
 import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 import React, { cache } from 'react'
 import Image from 'next/image'
+import { notFound } from 'next/navigation'
 
 import { generateMeta } from '@/utilities/generateMeta'
 import { Media } from '@/payload-types'
@@ -40,7 +40,9 @@ export default async function Post({ params: paramsPromise }: Args) {
   const url = '/projects/' + slug
   const project = await queryPostBySlug({ slug })
 
-  if (!project) return <PayloadRedirects url={url} />
+  if (!project) {
+    notFound() // This will trigger the Next.js 404 page
+  }
 
   return (
     <article className="pt-16 pb-16">

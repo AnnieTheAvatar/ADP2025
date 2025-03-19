@@ -1,7 +1,8 @@
 'use client'; // Ensure the hamburger uses client-side JavaScript
 
 import React, { useState } from 'react';
-import { Degree } from '@/payload-types'; // Assuming this type is defined for your Payload collection
+import Link from 'next/link'; // Import Next.js Link component
+import { Degree } from '@/payload-types'; 
 
 interface HeaderProps {
   degrees: Degree[]; // List of degrees passed as a prop
@@ -19,7 +20,9 @@ const Header = ({ degrees }: HeaderProps) => {
     <header className="header">
     
       <nav className="navbar">
-      <h2>ADP Grad 2025</h2>
+      <h2>
+          <Link href="/">ADP Grad 2025</Link>
+        </h2>
         {/* Hamburger Menu Icon */}
         <div className="hamburger" onClick={toggleMenu}>
           <div className="bar"></div>
