@@ -46,4 +46,4 @@ jobs:
 
       # Deploy to AWS
       - name: Deploy static site to S3 bucket
-        run: aws s3 sync ./dist/ s3://staging.adpgradshow.com --acl public-read --delete
+        run: aws s3 sync ./.next/ s3://staging.adpgradshow.com --acl public-read --delete
