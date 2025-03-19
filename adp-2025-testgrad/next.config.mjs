@@ -1,11 +1,21 @@
-import { withPayload } from '@payloadcms/next/withPayload'
+import { withPayload } from '@payloadcms/next/withPayload';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'standalone', // Ensure Amplify serves the correct build
+  output: 'standalone', 
   experimental: {
-    appDir: true, // Explicitly enable App Router
+    appDir: true, 
   },
-}
+  reactStrictMode: true, 
+  webpack(config) {
+    config.resolve.fallback = {
+      fs: false, 
+      path: false,
+      os: false,
+      buffer: false,
+    };
+    return config;
+  },
+};
 
-export default withPayload(nextConfig, { devBundleServerPackages: false })
+export default withPayload(nextConfig, { devBundleServerPackages: false });
