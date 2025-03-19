@@ -38,7 +38,7 @@ export default buildConfig({
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
   db: mongooseAdapter({
-    url: process.env.DATABASE_URI || '',
+    url: process.env.DATABASE_URI || 'mongodb://127.0.0.1/adp-2025-testgrad' ,
   }),
   sharp,
   plugins: [
