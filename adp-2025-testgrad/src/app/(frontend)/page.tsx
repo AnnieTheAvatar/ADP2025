@@ -21,6 +21,7 @@ export default async function HomePage() {
   return (
     <div className="home">
       <div className="content">
+        <h1>Under Construction</h1>
         <picture>
         <source srcSet="/api/media/file/usyd_logo.png" />
           <Image
@@ -30,7 +31,6 @@ export default async function HomePage() {
             width={200}
           />
         </picture>
-        <h1>Welcome to the ADP Grad Show</h1>
         <DegreeList />
         <div className="links">
           <a

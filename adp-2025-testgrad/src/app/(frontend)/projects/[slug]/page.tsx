@@ -48,6 +48,31 @@ export default async function Post({ params: paramsPromise }: Args) {
           <h1>{project.title}</h1>
           <Image className="headerImg" src={(project.coverimg as Media)?.sizes?.og?.url || '/default-image.jpg'} alt={project.title} width={800} height={600} />
           <p>{project.description}</p>
+          {/* Render the images and captions */}
+        {project.images && project.images.length > 0 && (
+          <div className="project-images">
+            {project.images.map((item, index) => {
+              // Destructure item to get image and caption
+              const { image, caption } = item;
+
+              return (
+                <div key={index} className="image-item">
+                  {image && (
+                    <Image
+                      className="project-image"
+                      src={(image as Media)?.sizes?.og?.url || '/default-image.jpg'}
+                      alt={caption || 'Project Image'}
+                      width={800}
+                      height={600}
+                    />
+                  )}
+                  {caption && <p>{caption}</p>}
+                </div>
+              );
+            })}
+          </div>
+          )}
+
         </div>
     </article>
   )
