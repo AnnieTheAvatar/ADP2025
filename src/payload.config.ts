@@ -33,7 +33,7 @@ export default buildConfig({
   },
   collections: [Users, Media, Students, Degrees, Briefs, Projects, Sponsors, Faculty, Studios],
   editor: lexicalEditor(),
-  secret: process.env.PAYLOAD_SECRET || '',
+  secret: process.env.PAYLOAD_SECRET || '222c9977a2902b55671c01ab',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
