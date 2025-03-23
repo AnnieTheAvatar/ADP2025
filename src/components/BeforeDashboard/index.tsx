@@ -15,7 +15,7 @@ const BeforeDashboard: React.FC = () => {
           Make your student profile <a href="http://localhost:3000/admin/collections/students/create">here</a>
         </li>
         <li>
-          Make your project page <a href="http://localhost:3000/admin/collections/project/create">here</a>
+          Make your project page <a href="http://localhost:3000/admin/collections/projects/create">here</a>
           <ul>
             <li>
               If you&apos;re part of a group project, please make sure there is only ONE project page for your group. Then choose each group member within the project details.

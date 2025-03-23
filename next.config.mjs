@@ -4,7 +4,7 @@ import { withPayload } from '@payloadcms/next/withPayload';
 const nextConfig = {
   output: 'standalone', 
   experimental: {
-    appDir: true, 
+    logging: 'verbose',
   },
   reactStrictMode: true, 
   webpack(config) {
