@@ -43,7 +43,7 @@ export default async function DegreePage({ params }: { params: Promise<{ slug: s
 
   return (
     <article className="degree-page">
-      <h1>{degree.degreeType} of {degree.title}</h1>
+      <h1>{degree.title}</h1>
       <div>
         <div>
           <h2>Unit Coordinators</h2>

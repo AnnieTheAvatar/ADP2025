@@ -31,7 +31,7 @@ const DegreeList: React.FC = () => {
       <ul>
         {Degrees.map((degree) => (
           <li key={degree.id}>
-            <a href={`/degrees/${degree.slug}`}>{degree.degreeType} of {degree.title}</a>
+            <a href={`/degrees/${degree.slug}`}>{degree.title}</a>
           </li>
         ))}
       </ul>

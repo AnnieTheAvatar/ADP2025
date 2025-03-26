@@ -31,6 +31,6 @@
     ".next/types/**/*.ts",
     "src/app/(frontend)/degrees/[slug]/page.js",
     "server.js"
-  ],
+, "src/lib/s3FileAdapter.js", "s3fileadaptor.js"  ],
   "exclude": ["node_modules"]
 }
