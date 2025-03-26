@@ -14,7 +14,7 @@ export const Media: CollectionConfig = {
   ],
   upload: {
     disableLocalStorage: true,
-    //adminThumbnail: 'thumbnail',
+    adminThumbnail: 'thumbnail',
     focalPoint: true,
     imageSizes: [
       {

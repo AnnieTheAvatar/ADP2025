@@ -13,11 +13,11 @@ export default async function HomePage() {
       <div className="content">
         <h1>Under Construction</h1>
         <picture>
-        <source srcSet="/api/media/file/usyd_logo.png" />
+        <source srcSet="https://grad2025.s3.ap-southeast-2.amazonaws.com/usyd_logo.png" />
           <Image
             alt="University of Sydney Logo"
             height={200}
-            src="/api/media/file/usyd_logo.png"
+            src="https://grad2025.s3.ap-southeast-2.amazonaws.com/usyd_logo.png"
             width={200}
           />
         </picture>
