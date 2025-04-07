@@ -16,7 +16,6 @@ export const Media: CollectionConfig = {
     disableLocalStorage: true,
     adminThumbnail: ({ doc }) =>
       `https://grad2025.s3.ap-southeast-2.amazonaws.com/grad2025/${doc.filename}`,
-    focalPoint: true,
     imageSizes: [
       {
         name: 'thumbnail',
