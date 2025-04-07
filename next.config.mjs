@@ -5,10 +5,13 @@ const nextConfig = {
   output: 'standalone', 
   reactStrictMode: true, 
   images: {
-    remotePatterns: [{
-      protocol: 'https',
-      hostname: 'grad2025.s3.ap-southeast-2.amazonaws.com',
-    }]
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'grad2025.s3.ap-southeast-2.amazonaws.com',
+        pathname: '/**',
+      },
+    ],
   },
   webpack(config) {
     config.resolve.fallback = {

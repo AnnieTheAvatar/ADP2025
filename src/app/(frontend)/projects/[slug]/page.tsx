@@ -48,7 +48,7 @@ export default async function Post({ params: paramsPromise }: Args) {
     <article className="pt-16 pb-16">
          <div className='project'>
           <h1>{project.title}</h1>
-          <Image className="headerImg" src={(project.coverimg as Media)?.sizes?.og?.url || '/default-image.jpg'} alt={project.title} width={800} height={600} />
+          <Image className="headerImg" src={'https://grad2025.s3.ap-southeast-2.amazonaws.com/grad2025/' + (project.coverimg as Media)?.sizes?.og?.filename || 'https://grad2025.s3.ap-southeast-2.amazonaws.com/default-image.jpg'} alt={project.title} width={800} height={600} />
           <p>{project.description}</p>
           {/* Render the images and captions */}
         {project.images && project.images.length > 0 && (
@@ -62,7 +62,7 @@ export default async function Post({ params: paramsPromise }: Args) {
                   {image && (
                     <Image
                       className="project-image"
-                      src={(image as Media)?.sizes?.og?.url || '/default-image.jpg'}
+                      src={'https://grad2025.s3.ap-southeast-2.amazonaws.com/grad2025/' + (image as Media)?.sizes?.og?.filename || 'https://grad2025.s3.ap-southeast-2.amazonaws.com/default-image.jpg'}
                       alt={caption || 'Project Image'}
                       width={800}
                       height={600}
